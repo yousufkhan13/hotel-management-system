@@ -3,20 +3,27 @@ import "dart:io";
 roomManagement({required int totalRooms}) {
   print('enter number of rooms occupied');
   int occupiedRooms = int.parse(stdin.readLineSync()!);
-  dynamic emptyRooms = totalRooms - occupiedRooms;
+  var emptyRooms = totalRooms - occupiedRooms;
   print('there are $emptyRooms no of emptyrooms');
-
-  print("please enter type of room you wish to select");
-  var typeOfRoom = stdin.readLineSync();
-
-  if (typeOfRoom == "executive") {
-    print("accomodation of executive room is 200 dollars");
-  } else if (typeOfRoom == "luxury") {
-    print("accomodation of executive room is 400 dollars");
-  } else if (typeOfRoom == 'presidential suit') {
-    print('accomodation of presidential suit for one night is 600 dollars');
+  print("please tell type of room you wish to select");
+  String? typeOfRoom = stdin.readLineSync()!;
+  if (typeOfRoom == "executive" && emptyRooms > 0) {
+    print("accomodation of $typeOfRoom is 200 dollars");
+  } else if (typeOfRoom == "executive" && emptyRooms == 0) {
+    print("$typeOfRoom are all occupied please choose another type of room");
+  } else if (typeOfRoom == 'presidential suit' && emptyRooms == 0) {
+    print(
+        '$typeOfRoom rooms are all occupied please choose another type of room');
+  } else if (typeOfRoom == 'presidential suit' && emptyRooms > 0) {
+    print("accomodation of $typeOfRoom is 600 dollars");
+  } else if (typeOfRoom == "luxury" && emptyRooms > 0)
+    print("accomodation of $typeOfRoom is 400 dollars");
+  else if (typeOfRoom == "luxury" && emptyRooms == 0) {
+    print(
+        '$typeOfRoom rooms are all occupied please choose another type of room');
   } else {
-    print("please choose correct type of Room for accomodation");
+    print(
+        "all types of rooms are booked at the moment please come again later");
   }
   return typeOfRoom;
 }

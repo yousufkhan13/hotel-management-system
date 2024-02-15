@@ -10,7 +10,7 @@ void main() {
   }
 
   // Get new data from the user
-  print('Enter new data:');
+
   String newData = roomManagement(totalRooms: 50);
 
   // Save data to the file
