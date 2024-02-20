@@ -8,10 +8,12 @@ void main() {
     String savedData = file.readAsStringSync();
     print('Data loaded from file: $savedData');
   }
-
   // Get new data from the user
   print('Enter new data:');
-  String newData = roomManagement(totalRooms: 50);
+  String newData = roomManagement(
+      totalRoomsExecutive: 20,
+      totalRoomsLuxury: 20,
+      totalRoomsPresidential: 20);
 
   // Save data to the file
   file.writeAsStringSync(newData);

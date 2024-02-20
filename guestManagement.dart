@@ -1,6 +1,8 @@
 import 'dart:io';
 
 guestManagement() {
+  print("can i have your name please");
+  String name = stdin.readLineSync()!;
   print("Please enter check-in date");
   int checkInDate = int.parse(stdin.readLineSync()!);
   print("Please enter check-out date");
@@ -12,13 +14,22 @@ guestManagement() {
     'oneNightStayPricePresidentialSuit': 600,
     'oneNightStayPriceExecutive': 200,
   };
-  var totalPriceLuxury = totalNight.abs() * prices['oneNightStayPriceLuxury'];
-  var totalPriceExecutive =
-      totalNight.abs() * prices['oneNightStayPriceExecutive'];
-  var totalPricePresidentialSuit =
-      totalNight.abs() * prices['oneNightStayPricePresidentialSuit'];
-  print('total price for Luxury is $totalPriceLuxury');
-  print('total price for presidentialSuit is $totalPricePresidentialSuit');
-  print('total price for executive is $totalPriceExecutive');
-  return (totalNight.abs()).toString();
+  print('please tell the type of room you wish to select');
+  String? typeOfRoom = stdin.readLineSync()!;
+
+  if (typeOfRoom == 'luxury') {
+    var totalPriceLuxury = totalNight.abs() * prices['oneNightStayPriceLuxury'];
+    print('total price for Luxury is $totalPriceLuxury');
+  } else if (typeOfRoom == 'presidential') {
+    var totalPricePresidentialSuit =
+        totalNight.abs() * prices['oneNightStayPricePresidentialSuit'];
+    print('total price for presidentialSuit is $totalPricePresidentialSuit');
+  } else if (typeOfRoom == 'executive') {
+    var totalPriceExecutive =
+        totalNight.abs() * prices['oneNightStayPriceExecutive'];
+    print('total price for executive is $totalPriceExecutive');
+  } else {
+    print('please enter correct type of room');
+  }
+  return '${totalNight.abs().toString()}, name of the guest: ${name}';
 }

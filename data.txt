@@ -1,1 +1,1 @@
-(luxury, 8)
+type of Room selected:presidential, total nights stayed: 5, name of the guest: harry
