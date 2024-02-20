@@ -2,22 +2,23 @@ import 'dart:io';
 
 guestManagement() {
   print("Please enter check-in date");
-  int StartedToStay = int.parse(stdin.readLineSync()!);
+  int checkInDate = int.parse(stdin.readLineSync()!);
   print("Please enter check-out date");
-  int CheckOut = int.parse(stdin.readLineSync()!);
-  int totalNight = StartedToStay - CheckOut;
+  int checkOutDate = int.parse(stdin.readLineSync()!);
+  int totalNight = checkInDate - checkOutDate;
   print('total number of night stayed is ${totalNight.abs()}');
   Map prices = {
     'oneNightStayPriceLuxury': 400,
     'oneNightStayPricePresidentialSuit': 600,
     'oneNightStayPriceExecutive': 200,
   };
-  var totalPriceLuxury = totalNight * prices['oneNightStayPriceLuxury'];
-  var totalPriceExecutive = totalNight * prices['oneNightStayPriceExecutive'];
+  var totalPriceLuxury = totalNight.abs() * prices['oneNightStayPriceLuxury'];
+  var totalPriceExecutive =
+      totalNight.abs() * prices['oneNightStayPriceExecutive'];
   var totalPricePresidentialSuit =
-      totalNight * prices['oneNightStayPricePresidentialSuit'];
+      totalNight.abs() * prices['oneNightStayPricePresidentialSuit'];
   print('total price for Luxury is $totalPriceLuxury');
   print('total price for presidentialSuit is $totalPricePresidentialSuit');
   print('total price for executive is $totalPriceExecutive');
-  return totalNight.toString();
+  return (totalNight.abs()).toString();
 }

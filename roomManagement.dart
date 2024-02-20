@@ -1,4 +1,5 @@
 import "dart:io";
+import "guestManagement.dart";
 
 roomManagement({required int totalRooms}) {
   print('enter number of rooms occupied');
@@ -25,5 +26,5 @@ roomManagement({required int totalRooms}) {
     print(
         "all types of rooms are booked at the moment please come again later");
   }
-  return typeOfRoom;
+  return (typeOfRoom, guestManagement()).toString();
 }
