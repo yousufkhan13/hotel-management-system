@@ -1,1 +1,1 @@
-type of Room selected:presidential, total nights stayed: 5, name of the guest: harry
+type of Room selected:luxury, total nights stayed: 4, name of the guest: yousuf,name of meal:Rice

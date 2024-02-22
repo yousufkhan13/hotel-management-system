@@ -1,4 +1,5 @@
 import 'dart:io';
+import "restaurantManagement.dart";
 
 guestManagement() {
   print("can i have your name please");
@@ -23,7 +24,7 @@ guestManagement() {
   } else if (typeOfRoom == 'presidential') {
     var totalPricePresidentialSuit =
         totalNight.abs() * prices['oneNightStayPricePresidentialSuit'];
-    print('total price for presidentialSuit is $totalPricePresidentialSuit');
+    print('total price for presidential suit is $totalPricePresidentialSuit');
   } else if (typeOfRoom == 'executive') {
     var totalPriceExecutive =
         totalNight.abs() * prices['oneNightStayPriceExecutive'];

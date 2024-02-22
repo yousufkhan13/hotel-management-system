@@ -1,11 +1,17 @@
 import "dart:io";
 import "guestManagement.dart";
+import "restaurantManagement.dart";
 
 roomManagement(
     {required int totalRoomsExecutive,
     required int totalRoomsLuxury,
     required int totalRoomsPresidential}) {
-  print('Please enter type of room you wish to select');
+  print(
+      '---------------------------WELCOME TO ANTALYA HOTEL MANAGEMENT SYSTEM------------------------');
+  print('Please enter type of room you wish to select from list below');
+  print('1-presidential');
+  print('2-luxury');
+  print('3-executive');
   String? typeOfRoom = stdin.readLineSync()!;
   if (typeOfRoom == 'executive') {
     print('enter number of executive rooms occupied less than or equals to 20');
@@ -27,6 +33,7 @@ roomManagement(
   } else {
     print("please select the correct type of room");
   }
-  return ('type of Room selected:${typeOfRoom}, total nights stayed: ${guestManagement()}')
+
+  return ('type of Room selected:${typeOfRoom}, total nights stayed: ${guestManagement()},${restaurantManagement()}')
       .toString();
 }
